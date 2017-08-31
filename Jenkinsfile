@@ -21,6 +21,7 @@ def performGitCheckout(branch, credentialsId, codeHubRepUrl) {
 }
 
 pipeline {
+  agent any
   stages {
     stage ("Init") {
       steps {
