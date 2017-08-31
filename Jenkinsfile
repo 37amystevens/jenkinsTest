@@ -21,11 +21,13 @@ def performGitCheckout(branch, credentialsId, codeHubRepUrl) {
 }
 
 pipeline {
-  agent any
-  tools {
-    sbt 'sbt-launch'
-  }
   stages {
+    stage ("Init") {
+      steps {
+        def sbtHome = tool 'sbt-launch'
+        env.sbt= "${sbtHome}/bin/sbt -no-colors -batch"
+      }
+    }
     stage ("Clone Repo"){
       steps{
         echo "Cloning repository"
@@ -36,7 +38,7 @@ pipeline {
     stage ("Build Repo"){
       steps{
         echo "Building project with sbt"
-        sh 'sbt clean'
+        sh '${sbt} clean'
         echo "Done cleaning project"
       }
     }
