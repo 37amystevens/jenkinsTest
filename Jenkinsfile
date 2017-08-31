@@ -26,4 +26,9 @@ node {
     performGitCheckout("master", "asteve", "github.com/37amystevens/jenkinsTest.git")
     echo "Done cloning repo"
   }
+  stage ("Build Repo"){
+    echo "Building project with sbt"
+    sh sbt clean package
+    echo "Done building project
+  }
 }
