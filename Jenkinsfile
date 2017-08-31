@@ -26,7 +26,7 @@ pipeline {
     stage ("Init") {
       steps {
         echo "attempting to initialize sbt tool"
-        export PATH=$PATH:/Users/asteve24/sbt/bin
+        export 'PATH=$PATH:/Users/asteve24/sbt/bin'
         echo "done initializing sbt tool"
       }
     }
