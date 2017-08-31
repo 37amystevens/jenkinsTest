@@ -24,8 +24,10 @@ pipeline {
   stages {
     stage ("Init") {
       steps {
-        def sbtHome = tool 'sbt-launch'
-        env.sbt= "${sbtHome}/bin/sbt -no-colors -batch"
+        script{
+          def sbtHome = tool 'sbt-launch'
+          env.sbt= "${sbtHome}/bin/sbt -no-colors -batch"
+        }
       }
     }
     stage ("Clone Repo"){
