@@ -28,7 +28,7 @@ pipeline {
         echo "attempting to initialize sbt tool"
         script{
           def sbtHome = tool '0.13'
-          env.sbt= "/Users/asteve24/sbt/bin"
+          env.sbt= "/Users/asteve24/sbt/bin/"
         }
         echo "done initializing sbt tool"
       }
@@ -43,7 +43,7 @@ pipeline {
     stage ("Build Repo"){
       steps{
         echo "Building project with sbt"
-        sh '${sbt} clean'
+        sh 'sbt clean'
         echo "Done cleaning project"
       }
     }
