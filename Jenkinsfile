@@ -29,7 +29,7 @@ node {
   stage ("Build Repo"){
     echo "Building project with sbt"
     def sbtHome = tool '0.13'
-    sh '{sbtHome}/bin/sbt clean'
+    sh '${sbtHome}/bin/sbt clean'
     echo "Done cleaning project"
   }
 }
