@@ -27,9 +27,9 @@ pipeline {
       steps {
         echo "attempting to initialize sbt tool"
         script{
-          def sbtHome = tool '0.13';
-          env.sbt= "${sbtHome}/bin/sbt -no-colors -batch";
-          console.log(env.sbt);
+          def sbtHome = tool '0.13'
+          env.sbt= "${sbtHome}/bin/sbt -no-colors -batch"
+          echo env.sbt
         }
         echo "done initializing sbt tool"
       }
