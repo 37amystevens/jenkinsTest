@@ -1,5 +1,7 @@
 #!groovy
 
+def sbtHome = 'sbt'
+
 def performGitCheckout(branch, credentialsId, codeHubRepUrl) {
     checkout([
         $class: 'GitSCM',
@@ -28,9 +30,7 @@ node {
   }
   stage ("Build Repo"){
     echo "Building project with sbt"
-    sh 'sbt clean'
-    echo "sbt clean completed"
-    sh 'sbt build'
+    sh '${sbtHome}/bin/sbt' clean compile'
     echo "Done building project"
   }
 }
