@@ -26,7 +26,6 @@ pipeline {
     stage ("Init") {
       steps {
         echo "attempting to initialize sbt tool"
-        export 'PATH=$PATH:/Users/asteve24/sbt/bin'
         echo "done initializing sbt tool"
       }
     }
@@ -40,7 +39,8 @@ pipeline {
     stage ("Build Repo"){
       steps{
         echo "Building project with sbt"
-        sh 'sbt clean'
+        def sbtHome = tool 'sbt-0.13'
+        sh '{sbtHome}/bin/sbt clean'
         echo "Done cleaning project"
       }
     }
