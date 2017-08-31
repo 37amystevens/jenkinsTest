@@ -29,7 +29,9 @@ pipeline {
         script{
           def sbtHome = tool 'sbt-0.13'
           env.sbt= "${sbtHome}/bin/sbt -no-colors -batch"
+          console.log(env.sbt)
         }
+        echo "done initializing sbt tool"
       }
     }
     stage ("Clone Repo"){
