@@ -26,7 +26,7 @@ pipeline {
     stage ("Init") {
       steps {
         script{
-          def sbtHome = tool 'sbt-launch'
+          def sbtHome = tool 'sbt-sbt-launch'
           env.sbt= "${sbtHome}/bin/sbt -no-colors -batch"
         }
       }
