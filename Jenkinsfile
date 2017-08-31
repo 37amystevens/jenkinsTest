@@ -30,7 +30,7 @@ node {
   }
   stage ("Build Repo"){
     echo "Building project with sbt"
-    sh '${sbtHome}/bin/sbt' clean compile'
+    sh '${sbtHome}/bin/sbt clean compile'
     echo "Done building project"
   }
 }
