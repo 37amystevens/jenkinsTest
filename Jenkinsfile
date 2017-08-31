@@ -26,10 +26,7 @@ pipeline {
     stage ("Init") {
       steps {
         echo "attempting to initialize sbt tool"
-        script{
-          def sbtHome = tool '0.13'
-          env.sbt= "/Users/asteve24/sbt/bin/"
-        }
+        export PATH=$PATH:/Users/asteve24/sbt/bin
         echo "done initializing sbt tool"
       }
     }
