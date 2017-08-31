@@ -28,7 +28,7 @@ node {
   }
   stage ("Build Repo"){
     echo "Building project with sbt"
-    def sbtHome = tool 'sbt-0.13'
+    def sbtHome = tool name: '0.13', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'
     sh '${sbtHome}/bin/sbt clean'
     echo "Done cleaning project"
   }
