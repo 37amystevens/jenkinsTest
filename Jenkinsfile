@@ -28,6 +28,7 @@ node {
   }
   stage ("Build Repo"){
     echo "Building project with sbt"
+    cd jenkinsTest
     sh sbt clean
     sh sbt build
     echo "Done building project"
