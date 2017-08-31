@@ -30,6 +30,6 @@ node {
     echo "Building project with sbt"
     sh sbt clean
     sh sbt build
-    echo "Done building project
+    echo "Done building project"
   }
 }
