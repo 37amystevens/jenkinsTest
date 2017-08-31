@@ -21,6 +21,10 @@ def performGitCheckout(branch, credentialsId, codeHubRepUrl) {
 }
 
 node {
+  agent any
+  tools {
+    sbt 'sbt-launch'
+  }
   stage ("Clone Repo"){
     echo "Cloning repository"
     performGitCheckout("master", "asteve", "github.com/37amystevens/jenkinsTest.git")
@@ -28,8 +32,7 @@ node {
   }
   stage ("Build Repo"){
     echo "Building project with sbt"
-    def sbtHome = tool 'sbt-0.13'
-    sh '${sbtHome}/bin/sbt clean compile'
-    echo "Done building project"
+    sh 'sbt clean'
+    echo "Done cleaning project"
   }
 }
