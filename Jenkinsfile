@@ -29,7 +29,6 @@ pipeline {
         script{
           def sbtHome = tool '0.13'
           env.sbt= "/Users/asteve24/sbt/bin"
-          echo env.sbt
         }
         echo "done initializing sbt tool"
       }
