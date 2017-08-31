@@ -28,9 +28,9 @@ node {
   }
   stage ("Build Repo"){
     echo "Building project with sbt"
-    sh sbt clean
+    sh 'sbt clean'
     echo "sbt clean completed"
-    sh sbt build
+    sh 'sbt build'
     echo "Done building project"
   }
 }
