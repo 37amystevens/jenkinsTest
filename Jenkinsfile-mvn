@@ -43,7 +43,7 @@ pipeline{
     stage ("Build Repo"){
       steps {
         echo "mvn build"
-        sh 'mvn build'
+        sh 'mvn package'
         echo "Done cleaning project"
       }
     }
