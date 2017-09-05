@@ -33,10 +33,17 @@ pipeline{
         echo "Done cloning repo"
       }
     }
+    stage ("Clean  Repo"){
+      steps {
+        echo "mvn clean"
+        sh 'mvn clean'
+        echo "Done cleaning project"
+      }
+    }
     stage ("Build Repo"){
       steps {
-        echo "Building project with sbt"
-        sh 'mvn clean'
+        echo "mvn build"
+        sh 'mvn build'
         echo "Done cleaning project"
       }
     }
