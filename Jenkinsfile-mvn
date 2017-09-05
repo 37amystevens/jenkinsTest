@@ -28,7 +28,6 @@ pipeline{
   stages{
     stage ("Clone Repo"){
       steps{
-        echo "Build from push was successful"
         echo "Cloning repository"
         performGitCheckout("master", "asteve", "github.com/37amystevens/jenkinsTest.git")
         echo "Done cloning repo"
