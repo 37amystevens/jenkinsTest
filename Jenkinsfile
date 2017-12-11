@@ -1,3 +1,3 @@
 #!groovy
 
-echo "{env.BUILD_NUMBER}"
+echo "${env.BUILD_NUMBER}"
