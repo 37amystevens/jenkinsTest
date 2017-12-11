@@ -1,4 +1,3 @@
 #!groovy
 
-def workspace = pwd()
-echo workspace
+echo "${env.JENKINS_HOME}"
