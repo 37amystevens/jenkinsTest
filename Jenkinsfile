@@ -1,3 +1,3 @@
 #!groovy
 
-echo "${env.JENKINS_HOME}"
+echo "${WORKSPACE}"
