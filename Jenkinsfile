@@ -1,3 +1,5 @@
 #!groovy
 
-echo "${WORKSPACE}"
+node {
+  def workspace = pwd()
+}
