@@ -1,6 +1,3 @@
 #!groovy
 
-node {
-  def workspace = pwd()
-  echo workspace
-}
+echo "{env.BUILD_NUMBER}"
