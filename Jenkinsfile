@@ -1,3 +1,4 @@
 #!groovy
 
-echo "${env.WORKSPACE}"
+def workspace = pwd()
+echo workspace
